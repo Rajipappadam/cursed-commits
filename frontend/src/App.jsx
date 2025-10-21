@@ -1,55 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useAuthStore } from './store/authStore';
 import { supabase } from './lib/supabase';
+import Landing from './pages/Landing';
+import Dashboard from './pages/Dashboard';
 import './App.css';
 
 function App() {
-  const [status, setStatus] = useState('Checking...');
-  const [apiStatus, setApiStatus] = useState('Checking...');
+  const { initAuth, setSession, setUser } = useAuthStore();
 
   useEffect(() => {
-    const checkSupabase = async () => {
-      try {
-        const { error } = await supabase.from('users').select('count');
-        if (error) throw error;
-        setStatus('✅ Connected to Supabase!');
-      } catch (error) {
-        setStatus('❌ Error: ' + error.message);
-      }
-    };
+    // Initialize auth state
+    initAuth();
 
-    const checkAPI = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/health');
-        const data = await response.json();
-        setApiStatus('✅ ' + data.message);
-      } catch (error) {
-        setApiStatus('❌ Backend not running');
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        console.log('Auth event:', event);
+        setSession(session);
+        setUser(session?.user ?? null);
       }
-    };
+    );
 
-    checkSupabase();
-    checkAPI();
-  }, []);
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [initAuth, setSession, setUser]);
 
   return (
-    <div className="app">
-      <div className="container">
-        <h1 className="title">🎮 Cursed Commits</h1>
-        <p className="subtitle">Day 1 Setup</p>
-        
-        <div className="status-card">
-          <h2>System Status</h2>
-          <div className="status-item">
-            <span>Supabase:</span>
-            <span>{status}</span>
-          </div>
-          <div className="status-item">
-            <span>Backend API:</span>
-            <span>{apiStatus}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
