@@ -62,3 +62,138 @@
 .status-item span:last-child {
   color: #666;
 }
+
+/* App-wide layout moved from inline styles */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+}
+
+.app.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.loading-inline {
+  padding: 2rem;
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+}
+
+.glass-card {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.how-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.how-number {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-desc {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #24292e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.login-btn:hover { background-color: #2f363d; }
+.login-btn.loading { opacity: 0.7; cursor: not-allowed; }
+
+/* User profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: white;
+}
+
+.avatar { width: 48px; height: 48px; border-radius: 50%; border: 2px solid white; }
+.user-info { flex: 1; }
+.user-name { font-weight: bold; font-size: 1.1rem; }
+.user-email { font-size: 0.9rem; opacity: 0.8; }
+.signout-btn {
+  padding: 0.5rem 1rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.signout-btn:hover { background-color: #dc2626; }
+
+/* Dashboard specifics */
+.dashboard-container { max-width: 1200px; margin: 0 auto; width: 100%; }
+.muted { color: #666; }
+.coming-soon { margin-top: 2rem; padding: 1.5rem; background-color: #f0f0f0; border-radius: 8px; }

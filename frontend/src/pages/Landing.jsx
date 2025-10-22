@@ -15,108 +15,54 @@ export default function Landing() {
 
   if (loading) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        color: 'white',
-        fontSize: '1.5rem'
-      }}>
-        Loading...
-      </div>
+      <div className="app loading">Loading...</div>
     );
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '2rem'
-    }}>
-      <div style={{
-        maxWidth: '800px',
-        textAlign: 'center',
-        color: 'white'
-      }}>
-        <h1 style={{
-          fontSize: '5rem',
-          fontWeight: 'bold',
-          margin: '0 0 1rem 0',
-          textShadow: '3px 3px 6px rgba(0,0,0,0.3)'
-        }}>
-          🎮 Cursed Commits
-        </h1>
-        
-        <p style={{
-          fontSize: '1.5rem',
-          marginBottom: '3rem',
-          opacity: 0.95
-        }}>
-          Turn your GitHub contribution graph into a horror survival game!
-        </p>
+    <div className="app">
+      <div className="container">
+        <h1 className="title">🎮 Cursed Commits</h1>
 
-        <div style={{
-          backgroundColor: 'rgba(255,255,255,0.15)',
-          borderRadius: '12px',
-          padding: '2rem',
-          marginBottom: '3rem',
-          backdropFilter: 'blur(10px)'
-        }}>
-          <h2 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>
-            How It Works
-          </h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1.5rem',
-            textAlign: 'left',
-            fontSize: '1rem'
-          }}>
-            <div>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>1️⃣</div>
-              <strong>Connect GitHub</strong>
-              <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
-                Login with your GitHub account
-              </p>
+        <p className="subtitle">Turn your GitHub contribution graph into a horror survival game!</p>
+
+        <div className="glass-card">
+          <h2 className="card-title">How It Works</h2>
+          <div className="how-grid">
+            <div className="how-item">
+              <div className="how-number">1️⃣</div>
+              <div>
+                <strong>Connect GitHub</strong>
+                <p className="how-desc">Login with your GitHub account</p>
+              </div>
             </div>
-            <div>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>2️⃣</div>
-              <strong>Generate Level</strong>
-              <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
-                Your commits become safe zones
-              </p>
+            <div className="how-item">
+              <div className="how-number">2️⃣</div>
+              <div>
+                <strong>Generate Level</strong>
+                <p className="how-desc">Your commits become safe zones</p>
+              </div>
             </div>
-            <div>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>3️⃣</div>
-              <strong>Survive!</strong>
-              <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
-                Avoid monsters in gaps
-              </p>
+            <div className="how-item">
+              <div className="how-number">3️⃣</div>
+              <div>
+                <strong>Survive!</strong>
+                <p className="how-desc">Avoid monsters in gaps</p>
+              </div>
             </div>
-            <div>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>4️⃣</div>
-              <strong>Compete</strong>
-              <p style={{ fontSize: '0.9rem', opacity: 0.9 }}>
-                Top the leaderboard!
-              </p>
+            <div className="how-item">
+              <div className="how-number">4️⃣</div>
+              <div>
+                <strong>Compete</strong>
+                <p className="how-desc">Top the leaderboard!</p>
+              </div>
             </div>
           </div>
         </div>
 
         <LoginButton />
 
-        <div style={{
-          marginTop: '2rem',
-          fontSize: '0.9rem',
-          opacity: 0.8
-        }}>
-          Built for Halloween Hacks 2024 🎃
-        </div>
+        <div className="note">Built for Halloween Hacks 2024 🎃</div>
       </div>
     </div>
   );
