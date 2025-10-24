@@ -17,21 +17,21 @@
   color: white;
   text-align: center;
   margin: 0 0 0.5rem 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
   margin: 0 0 2rem 0;
 }
 
 .status-card {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .status-card h2 {
@@ -96,7 +96,7 @@
   font-size: 5rem;
   font-weight: bold;
   margin: 0 0 1rem 0;
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
@@ -106,7 +106,7 @@
 }
 
 .glass-card {
-  background-color: rgba(255,255,255,0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -164,8 +164,13 @@
   transition: all 0.15s ease;
 }
 
-.login-btn:hover { background-color: #2f363d; }
-.login-btn.loading { opacity: 0.7; cursor: not-allowed; }
+.login-btn:hover {
+  background-color: #2f363d;
+}
+.login-btn.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
 
 /* User profile */
 .user-profile {
@@ -173,15 +178,28 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   color: white;
 }
 
-.avatar { width: 48px; height: 48px; border-radius: 50%; border: 2px solid white; }
-.user-info { flex: 1; }
-.user-name { font-weight: bold; font-size: 1.1rem; }
-.user-email { font-size: 0.9rem; opacity: 0.8; }
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.user-info {
+  flex: 1;
+}
+.user-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.user-email {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 .signout-btn {
   padding: 0.5rem 1rem;
   background-color: #ef4444;
@@ -191,9 +209,306 @@
   cursor: pointer;
   font-weight: bold;
 }
-.signout-btn:hover { background-color: #dc2626; }
+.signout-btn:hover {
+  background-color: #dc2626;
+}
 
 /* Dashboard specifics */
-.dashboard-container { max-width: 1200px; margin: 0 auto; width: 100%; }
-.muted { color: #666; }
-.coming-soon { margin-top: 2rem; padding: 1.5rem; background-color: #f0f0f0; border-radius: 8px; }
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-main-card {
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.dashboard-title {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.loading-data {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.error-message {
+  padding: 1rem;
+  background-color: #fee;
+  color: #c00;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.commit-graph-section {
+  margin-top: 2rem;
+}
+
+.commit-graph-title {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.commit-graph-container {
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.commit-graph {
+  display: flex;
+  gap: 3px;
+  min-width: fit-content;
+}
+
+.commit-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.commit-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.commit-legend {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-square {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.game-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.game-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.game-button:hover {
+  background-color: #7c3aed;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.last-updated {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.refresh-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background-color: #5a67d8;
+}
+
+.refresh-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Game Generation Section */
+.game-generation-section {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.game-generation-title {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.difficulty-selector {
+  margin-bottom: 1.5rem;
+}
+
+.difficulty-label {
+  display: block;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.difficulty-button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: all 0.2s;
+  background-color: #fff;
+  color: #333;
+}
+
+.difficulty-button.selected {
+  background-color: #8b5cf6;
+  color: #fff;
+  border: none;
+}
+
+.difficulty-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.generate-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.generate-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.generate-button:hover:not(:disabled) {
+  background-color: #7c3aed;
+}
+
+/* Level Preview Actions */
+.level-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.play-button {
+  flex: 1;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.play-button:hover {
+  background-color: #059669;
+}
+
+.regenerate-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.regenerate-button:hover {
+  background-color: #4b5563;
+}
+
+.muted {
+  color: #666;
+}
