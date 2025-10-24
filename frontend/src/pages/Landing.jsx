@@ -62,7 +62,7 @@ export default function Landing() {
 
         <LoginButton />
 
-        <div className="note">Built for Halloween Hacks 2024 🎃</div>
+        <div className="note">Built for Halloween Hacks 2025 🎃</div>
       </div>
     </div>
   );
